@@ -26,14 +26,14 @@ if(isExists !=null || redis.incr(key) <= 5){
 ### 1.2 哈希
 - 值本身又是一个键值对结构
 - 使用场景
-  - 相比使用字符串序列化缓存用户信息，哈希类型变得更加直观
+  - 相比使用字符串序列化缓存用户信息，哈希类型变得更加直观
 
 ### 1.3 列表
 - 从左到右组成的有序列表，可以对两端插入（push）和弹出（pop）
 - blpop key timeout/brpop key timeout 阻塞弹出
 - 使用场景
-  - 消息队列，lpush+brpop
-  - 文章列表：
+  - 消息队列，lpush+brpop
+  - 文章列表：
 ```
 //每篇文章使用哈希
 hmset article:1 title xx timestamp 1234567890 content xxxx
@@ -49,14 +49,14 @@ for article in {articles}
 - 不允许出现重复元素且无序
 - sinter/sunion/sdiff key1 key2...交集/并集/差集，对应保存命令：sinterstore/sunionstore/sdiffstore
 - 使用场景
-  - 用户标签，计算用户共同喜好，推荐系统
+  - 用户标签，计算用户共同喜好，推荐系统
   
 ### 1.5 有序集合
 - 不允许出现重复元素，且有序，根据score排序
 - zadd key score member [score member]...
 - zrank/zrevrank key menber 返回排名 正序（从小到大）/逆序
 - 使用场景
-  - 排行榜系统
+  - 排行榜系统
 ```
 //添加赞数
 zadd user:rangking:20160316 3 mike
