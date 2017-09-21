@@ -8,4 +8,4 @@
 - mget key1 key2...批量获取/mset key1 value1 key2 value2...批量设置
 #### 1.1 典型场景
 - 缓存，redis作缓存层，MySQL作存储层，数据先请求redis
-- 设计合理的键名，业务名:对象名:id:\[属性\]
+- 设计合理的键名，业务名:对象名:ID:[属性]
