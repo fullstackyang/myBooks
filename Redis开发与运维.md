@@ -57,11 +57,11 @@ for article in {articles}
 - zrank/zrevrank key menber 返回排名 正序（从小到大）/逆序
 - 使用场景
   - 排行榜系统
-  ```
-  //添加赞数
-  zadd user:rangking:20160316 3 mike
-  //自增zincrby
-  zincrby user:ranking:20160316 1 mike
-  //获取top10
-  zrevrangebyrank user:rangking:20160316 0 9
-  ```
+```
+//添加赞数
+zadd user:rangking:20160316 3 mike
+//自增zincrby
+zincrby user:ranking:20160316 1 mike
+//获取top10
+zrevrangebyrank user:rangking:20160316 0 9
+```
